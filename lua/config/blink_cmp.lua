@@ -1,0 +1,13 @@
+-- blink.cmp configuration file
+-- This file can be used to customize blink.cmp settings
+-- Most configuration is done in lua/plugins/cmp.lua
+
+-- Example of how to customize blink.cmp after it's loaded:
+-- local blink_cmp = require('blink.cmp')
+-- 
+-- -- You can modify settings here if needed
+-- -- blink_cmp.setup({
+-- --   completion = {
+-- --     documentation = { auto_show = true }
+-- --   }
+-- -- }) 
