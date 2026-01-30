@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 require("config.options")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -19,7 +17,6 @@ vim.api.nvim_create_autocmd("User", {
 	callback = function()
 		require("mason").setup()
 		require("mason-lspconfig").setup()
-		require("config.lsp")
 		require("config.null_ls")
 		require("config.nvimtree")
 		require("config.keymaps")

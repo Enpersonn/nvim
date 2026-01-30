@@ -1,5 +1,6 @@
 local map = vim.keymap.set
 local diag = vim.diagnostic
+local buf = vim.lsp.buf
 local builtin = require("telescope.builtin")
 
 map("n", "<leader>ff", builtin.find_files, { desc = "Telescope: Find Files" })
@@ -24,8 +25,22 @@ map("n", "<leader>fl", builtin.diagnostics, { desc = "Telescope diagnostics" })
 
 map("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "Force toggle nvim-tree" })
 
+map("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "toggles terminal overlay" })
 
-map("n", "<leader>[d", diag.goto_prev, { desc = "Previous diagnostic" })
-map("n", "<leader>]d", diag.goto_next, { desc = "Next diagnostic" })
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		local opts = { buffer = args.buf }
 
-map("n", "<leader>F", vim.lsp.buf.format, { desc = "Format current file" })
+		buf.format({ async = false })
+
+		map("n", "<leader>F", buf.format, { desc = "Format current file" })
+		map("n", "gd", buf.definition, opts)
+		map("n", "K", buf.hover, opts)
+		map("n", "gi", buf.implementation, opts)
+		map("n", "<leader>rn", buf.rename, opts)
+		map("n", "<leader>ca", buf.code_action, opts)
+		map("n", "[d", diag.goto_prev, opts)
+		map("n", "]d", diag.goto_next, opts)
+		map("n", "<leader>d", vim.diagnostic.open_float, opts)
+	end,
+})
