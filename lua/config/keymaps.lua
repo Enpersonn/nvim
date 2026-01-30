@@ -1,6 +1,7 @@
 local map = vim.keymap.set
 local diag = vim.diagnostic
 local buf = vim.lsp.buf
+local fyler = require("fyler")
 local builtin = require("telescope.builtin")
 
 map("n", "<leader>ff", builtin.find_files, { desc = "Telescope: Find Files" })
@@ -23,8 +24,9 @@ map("n", "<leader>fk", builtin.keymaps, { desc = "Find Keymaps" })
 
 map("n", "<leader>fl", builtin.diagnostics, { desc = "Telescope diagnostics" })
 
-map("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "Force toggle nvim-tree" })
-
+map("n", "<leader>e", function()
+  require("fyler").open()
+end)
 map("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "toggles terminal overlay" })
 
 vim.api.nvim_create_autocmd("LspAttach", {

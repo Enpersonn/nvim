@@ -1,3 +1,4 @@
+
 -- Get blink.cmp capabilities
 local capabilities = require('blink.cmp').get_lsp_capabilities()
 

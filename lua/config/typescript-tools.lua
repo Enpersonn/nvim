@@ -1,0 +1,51 @@
+require("typescript-tools").setup {
+	settings = {
+		separate_diagnostic_server = true,
+		publish_diagnostic_on = "insert_level",
+		expose_as_code = "all",
+		tssserver_max_memory = "auto",
+		include_completion_with_insert_text = true,
+		tsserver_path = nil,
+		tsserver_locale = "en",
+		disable_member_code_lense = false,
+		code_lens = "all",
+		tsserver_format_options = {
+			insertSpaceAfterCommaDelimiter = true,
+			insertSpaceAfterSemicolonInForStatements = true,
+			insertSpaceBeforeAndAfterBinaryOperators = true,
+			insertSpaceAfterConstructor = true,
+			insertSpaceAfterKeywordsInControlFlowStatements = true,
+			insertSpaceAfterFunctionKeywordForAnonymousFunctions = true,
+			insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = true,
+			insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis = true,
+			insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets = true,
+			insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces = true,
+			insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces = true,
+			insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces = true,
+			insertSpaceAfterTypeAssertion = true,
+			insertSpaceBeforeFunctionParenthesis = true,
+			placeOpenBraceOnNewLineForFunctions = true,
+			placeOpenBraceOnNewLineForControlBlocks = true,
+			insertSpaceBeforeTypeAnnotation = true,
+			semicolons = "insert",
+		},
+		tsserver_file_preferences = {
+			includeCompletionForModuleExport = true,
+			includeCompletionForImportStatments = true,
+			includeAutomaticOptionalChainCompletions = true,
+
+			displayPartsForJSDoc = true,
+
+			includeInlayEnumMemeberValueHints = true,
+			includeParameterNameHints = "all",
+			includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+			includeInlayFunctionParameterTypeHints = true,
+
+			includeInlayVariableTypeHints = true,
+			includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+			includeInlayPropertyDeclarationTypeHints = true,
+			includeInlayFunctionLikeReturnTypeHints = true,
+			includeInlayEnumMemberValueHints = true,
+		},
+	}
+}

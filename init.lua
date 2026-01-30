@@ -1,6 +1,7 @@
 require("config.options")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git", "clone", "--filter=blob:none",
@@ -12,13 +13,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
+vim.lsp.enable('biome')
+vim.lsp.enable('luals')
+
 vim.api.nvim_create_autocmd("User", {
 	pattern = "VeryLazy",
 	callback = function()
-		require("mason").setup()
-		require("mason-lspconfig").setup()
 		require("config.null_ls")
-		require("config.nvimtree")
 		require("config.keymaps")
+		require("config.fyler")
+		require("config.typescript-tools")
 	end,
 })
