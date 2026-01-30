@@ -21,7 +21,6 @@ vim.api.nvim_create_autocmd("User", {
 	callback = function()
 		require("config.null_ls")
 		require("config.keymaps")
-		require("config.fyler")
 		require("config.typescript-tools")
 	end,
 })
