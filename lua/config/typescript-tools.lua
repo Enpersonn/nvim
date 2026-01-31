@@ -1,13 +1,8 @@
 require("typescript-tools").setup {
 	settings = {
-		separate_diagnostic_server = true,
-		publish_diagnostic_on = "insert_level",
-		expose_as_code = "all",
-		tssserver_max_memory = "auto",
-		include_completion_with_insert_text = true,
 		tsserver_path = nil,
 		tsserver_locale = "en",
-		disable_member_code_lense = false,
+		disable_member_code_lens = false,
 		code_lens = "all",
 		tsserver_format_options = {
 			insertSpaceAfterCommaDelimiter = true,
@@ -31,7 +26,7 @@ require("typescript-tools").setup {
 		},
 		tsserver_file_preferences = {
 			includeCompletionForModuleExport = true,
-			includeCompletionForImportStatments = true,
+			includeCompletionForImportStatements = true,
 			includeAutomaticOptionalChainCompletions = true,
 
 			displayPartsForJSDoc = true,
