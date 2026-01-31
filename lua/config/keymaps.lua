@@ -25,7 +25,7 @@ map("n", "<leader>fk", builtin.keymaps, { desc = "Find Keymaps" })
 map("n", "<leader>fl", builtin.diagnostics, { desc = "Telescope diagnostics" })
 
 map("n", "<leader>e", function()
-  require("fyler").open()
+	fyler.focus()
 end)
 map("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "toggles terminal overlay" })
 

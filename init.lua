@@ -12,9 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
+require("nvim-treesitter.install").compilers = ("cl")
 
 vim.lsp.enable('biome')
-vim.lsp.enable('luals')
+vim.lsp.enable('lua_ls')
 
 vim.api.nvim_create_autocmd("User", {
 	pattern = "VeryLazy",
@@ -22,5 +23,7 @@ vim.api.nvim_create_autocmd("User", {
 		require("config.null_ls")
 		require("config.keymaps")
 		require("config.typescript-tools")
+		require("config.copilot")
+		require("config.fyler")
 	end,
 })

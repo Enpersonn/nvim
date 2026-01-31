@@ -1,4 +1,3 @@
-
 -- Get blink.cmp capabilities
 local capabilities = require('blink.cmp').get_lsp_capabilities()
 
@@ -17,6 +16,6 @@ vim.lsp.config['biome'] = {
 		"typescriptreact",
 	},
 
-	root_dir = { "biome.json", "biome.jsonc" },
+	root_markers = { "biome.json", "biome.jsonc" },
 	workspace_required = true,
 }
