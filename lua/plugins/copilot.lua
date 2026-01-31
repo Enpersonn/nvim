@@ -1,5 +1,4 @@
-
-return{
+return {
 	{
 		"zbirenbaum/copilot.lua",
 		dependency = {
@@ -7,5 +6,6 @@ return{
 		},
 		cmd = "Copilot",
 		event = "InsertEnter",
-	}
-} 
+	},
+}
+

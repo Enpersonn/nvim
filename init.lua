@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-require("nvim-treesitter.install").compilers = ("cl")
+require("nvim-treesitter.install").compilers = { "zig" }
 
 vim.lsp.enable('biome')
 vim.lsp.enable('lua_ls')

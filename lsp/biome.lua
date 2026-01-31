@@ -16,6 +16,8 @@ vim.lsp.config['biome'] = {
 		"typescriptreact",
 	},
 
-	root_markers = { "biome.json", "biome.jsonc" },
+	root_dir = function (bufnr)
+		return vim.fs.root(bufnr, { "biome.json", "biome.jsonc" })
+	end,
 	workspace_required = true,
 }

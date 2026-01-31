@@ -4,10 +4,10 @@
 
 -- Example of how to customize blink.cmp after it's loaded:
 -- local blink_cmp = require('blink.cmp')
--- 
+--
 -- -- You can modify settings here if needed
 -- -- blink_cmp.setup({
 -- --   completion = {
 -- --     documentation = { auto_show = true }
 -- --   }
--- -- }) 
+-- -- })

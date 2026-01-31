@@ -4,3 +4,4 @@ return {
 	branch = "stable",
 	lazy = false,
 }
+

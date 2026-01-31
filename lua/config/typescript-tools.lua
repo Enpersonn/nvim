@@ -24,7 +24,7 @@ require("typescript-tools").setup {
 			insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces = true,
 			insertSpaceAfterTypeAssertion = true,
 			insertSpaceBeforeFunctionParenthesis = true,
-			placeOpenBraceOnNewLineForFunctions = true,
+			placeOpenBraceOnNewLineForFunctions = false,
 			placeOpenBraceOnNewLineForControlBlocks = true,
 			insertSpaceBeforeTypeAnnotation = true,
 			semicolons = "insert",
