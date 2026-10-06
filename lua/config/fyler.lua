@@ -1,4 +1,4 @@
-fyler = require("fyler")
+local fyler = require("fyler")
 
 fyler.setup({
 	views = {
@@ -18,6 +18,13 @@ fyler.setup({
 	integrations = {
 		icons = "mini_icons",
 	},
+	mappings = {
+		n = {
+			["g."] = {
+				action = "toggle_ui",
+				args = { "hidden_items" },
+				desc = "Toggle hidden files",
+			},
+		},
+	},
 })
-
-fyler.open()

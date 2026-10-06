@@ -1,7 +1,7 @@
 -- Get blink.cmp capabilities
-local capabilities = require('blink.cmp').get_lsp_capabilities()
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-vim.lsp.config['biome'] = {
+return {
 	capabilities = capabilities,
 	cmd = { "biome", "lsp-proxy" },
 	filetypes = {
