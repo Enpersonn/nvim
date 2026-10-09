@@ -10,6 +10,7 @@ return {
 			{ "<leader>n", group = ".NET" },
 			{ "<leader>nt", group = ".NET tests" },
 			{ "<leader>o", group = "Obsidian" },
+			{ "<leader>r", group = "Run" },
 			{ "<leader>t", group = "Toggle" },
 		},
 	},

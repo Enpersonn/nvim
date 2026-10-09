@@ -91,8 +91,9 @@ return {
 			local lint_group = vim.api.nvim_create_augroup("UserLint", { clear = true })
 			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 				group = lint_group,
-				callback = function()
-					lint.try_lint()
+				callback = function(args)
+					local root = vim.fs.root(args.buf, { "eslint.config.js", "eslint.config.mjs", ".eslintrc.js", "package.json" })
+					lint.try_lint(nil, { cwd = root or vim.fn.getcwd() })
 				end,
 			})
 		end,
