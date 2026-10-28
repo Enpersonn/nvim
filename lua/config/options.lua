@@ -9,6 +9,7 @@ vim.g.loaded_ruby_provider = 0
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.wrap = false
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
@@ -26,6 +27,19 @@ vim.opt.scrolloff = 5
 vim.opt.confirm = true
 
 local options_group = vim.api.nvim_create_augroup("UserOptions", { clear = true })
+
+-- Dashboard-style buffers change window-local options. Restore the defaults when
+-- a normal file is opened in the same window.
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+	group = options_group,
+	callback = function()
+		if vim.bo.buftype == "" then
+			vim.wo.number = true
+			vim.wo.relativenumber = true
+			vim.wo.signcolumn = "yes"
+		end
+	end,
+})
 
 vim.api.nvim_create_autocmd("FileType", {
 	group = options_group,

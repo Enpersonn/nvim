@@ -10,6 +10,7 @@ return {
 	keys = {
 		{ "<leader>nr", "<cmd>Dotnet run profile default<cr>", desc = ".NET: Run profile" },
 		{ "<leader>nd", "<cmd>Dotnet debug profile default<cr>", desc = ".NET: Debug profile" },
+		{ "<leader>na", "<cmd>Dotnet debug attach<cr>", desc = ".NET: Attach debugger" },
 		{ "<leader>nb", "<cmd>Dotnet build solution quickfix<cr>", desc = ".NET: Build solution" },
 		{ "<leader>nx", "<cmd>Dotnet testrunner<cr>", desc = ".NET: Test runner" },
 	},

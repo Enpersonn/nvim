@@ -57,7 +57,22 @@ vim.lsp.config("vtsls", {
 	},
 })
 
-vim.lsp.enable({ "biome", "lua_ls", "vtsls", "vue_ls" })
+vim.lsp.config("jsonls", {
+	capabilities = capabilities,
+	settings = {
+		json = {
+			schema = require("schemastore").json.schemas(),
+			format = {
+				enabled = true,
+			},
+			validate = {
+				enable = true,
+			},
+		},
+	},
+})
+
+vim.lsp.enable({ "biome", "jsonls", "lua_ls", "vtsls", "vue_ls" })
 
 local lsp_group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true })
 

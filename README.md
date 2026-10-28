@@ -40,6 +40,20 @@ Inside Zellij this adds a project-named tab to the current session. Outside
 Zellij it starts the `code` layout in the selected directory. The layout opens
 Neovim, PI, and a bottom terminal. `zwork` manually opens the shared workspace.
 
+When Neovim starts without a file, it opens a project dashboard instead of the
+empty buffer. The dashboard detects the current project and displays:
+
+- the project path, technology markers, package manager, and README summary;
+- the Git branch, ahead/behind state, latest commit, and changed files;
+- recent files belonging to the current project;
+- runnable tasks detected from `package.json`, Cargo, Go, Python, .NET, or Make;
+- shortcuts for Telescope, Fyler, diagnostics, Lazy, and refreshing the data.
+
+Dashboard keys are shown directly on the screen. Press `1`-`5` to open a recent
+file, `t` to choose a detected task, or `<Enter>` on a recent/changed file. Use
+`:Dashboard` to reopen it at any time. Opening Neovim with a file argument,
+reading stdin, or restoring a populated buffer skips the dashboard.
+
 Use `Ctrl-h/j/k/l` to move seamlessly between Neovim splits and Zellij panes.
 `Alt-m` opens Zellij's pane-move mode. Chat notifications set a visual marker
 on their Zellij pane/tab and request a Windows Terminal taskbar notification.

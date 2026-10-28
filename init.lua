@@ -1,4 +1,5 @@
 require("config.options")
+require("config.paste").setup()
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -20,3 +21,4 @@ require("lazy").setup("plugins", {
 
 require("config.keymaps")
 require("config.devtasks")
+require("config.dashboard").setup()
